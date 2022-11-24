@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
+import FrontPage from "../components/front"
 
 const links = [
   {
@@ -71,7 +72,17 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => (
   <Layout>
+    <FrontPage />
     <div className={styles.textCenter}>
+      <div>
+        <ul>
+          <li>large stylized image w/ some animation?</li>
+          <li> Or cutouts? Animate inside</li>
+          <li>Name centered</li>
+          <li>portfolio</li>
+          <li>about</li>
+        </ul>
+      </div>
       <StaticImage
         src="../images/example.png"
         loading="eager"
