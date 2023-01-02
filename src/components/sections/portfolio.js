@@ -6,6 +6,8 @@ const Portfolio = () => {
       <h2 className="heading">Portfolio</h2>
 
       <p>hi</p>
+      <p> hover with overlay (semi transparent or solid?)</p>
+      <p>coloured borders? pattern</p>
     </div>
   )
 }

@@ -16,6 +16,7 @@ const FrontPage = () => {
         <div class="title-text-group">
           <h1 className="title">Jennifer Chow</h1>
         </div>
+        <p>match it, animation? greyscale and stylize photo </p>
       </div>
     </>
   )
