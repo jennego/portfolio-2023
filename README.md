@@ -1,4 +1,4 @@
-Here we go again
+Here we go again.
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
