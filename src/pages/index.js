@@ -4,6 +4,7 @@ import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import FrontPage from "../components/sections/front"
 import Portfolio from "../components/sections/portfolio"
+import "flexboxgrid/dist/flexboxgrid.min.css"
 
 const IndexPage = () => (
   <Layout>
