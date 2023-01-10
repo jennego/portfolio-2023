@@ -5,6 +5,7 @@ import * as styles from "../components/index.module.css"
 import FrontPage from "../components/sections/front"
 import Portfolio from "../components/sections/portfolio"
 import "flexboxgrid/dist/flexboxgrid.min.css"
+import About from "../components/sections/about"
 
 const IndexPage = () => (
   <Layout>
@@ -19,6 +20,7 @@ const IndexPage = () => (
       </ul>
     </div>
     <Portfolio />
+    <About />
   </Layout>
 )
 

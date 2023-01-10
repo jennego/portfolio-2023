@@ -39,7 +39,7 @@ const Portfolio = () => {
                 <div>
                   <GatsbyImage
                     image={node.mainPhoto.gatsbyImageData}
-                    imgClassName="portfolio-image"
+                    className="portfolio-image"
                   />
                 </div>
                 <div className="portfolio-item-hover">
