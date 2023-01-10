@@ -11,7 +11,12 @@ const Portfolio = () => {
             id
             name
             mainPhoto {
-              gatsbyImageData
+              gatsbyImageData(
+                height: 300
+                width: 400
+                aspectRatio: 1.5
+                layout: FULL_WIDTH
+              )
             }
           }
         }
@@ -26,13 +31,22 @@ const Portfolio = () => {
       <p> hover with overlay (semi transparent or solid?)</p>
       <p>coloured borders? pattern</p>
 
-      <div>
+      <div className="content">
         <div className="row">
           {data.allContentfulPortfolio.edges.map(({ node }) => (
-            <div className="col-xs-12 col-sm-6 col-lg-3">
-              <GatsbyImage image={node.mainPhoto.gatsbyImageData} />
-              {node.name}
-            </div>
+            <>
+              <div className="col-xs-12 col-sm-6 col-lg-4 portfolio-item">
+                <div>
+                  <GatsbyImage
+                    image={node.mainPhoto.gatsbyImageData}
+                    imgClassName="portfolio-image"
+                  />
+                </div>
+                <div className="portfolio-item-hover">
+                  <h2> {node.name}</h2>
+                </div>
+              </div>
+            </>
           ))}
         </div>
       </div>
