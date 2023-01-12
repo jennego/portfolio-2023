@@ -10,6 +10,8 @@ const Portfolio = () => {
           node {
             id
             name
+            shortDescription
+            categories
             mainPhoto {
               gatsbyImageData(
                 height: 300
@@ -23,6 +25,7 @@ const Portfolio = () => {
       }
     }
   `)
+
   return (
     <div>
       <h2 className="heading">Portfolio</h2>
@@ -35,7 +38,10 @@ const Portfolio = () => {
         <div className="row">
           {data.allContentfulPortfolio.edges.map(({ node }) => (
             <>
-              <div className="col-xs-12 col-sm-6 col-lg-4 portfolio-item">
+              <div
+                className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
+                key={node.id}
+              >
                 <div>
                   <GatsbyImage
                     image={node.mainPhoto.gatsbyImageData}
@@ -43,7 +49,13 @@ const Portfolio = () => {
                   />
                 </div>
                 <div className="portfolio-item-hover">
-                  <h2> {node.name}</h2>
+                  <div className="overlay-content">
+                    <h2 className="portfolio-item-name"> {node.name}</h2>
+                    <p className="portfolio-item-description">
+                      {node.shortDescription}
+                    </p>
+                    <p>{node.categories}</p>
+                  </div>
                 </div>
               </div>
             </>
