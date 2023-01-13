@@ -37,6 +37,7 @@ h1.title {
   height: 110vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .heading {
@@ -57,10 +58,6 @@ h1.title {
   position: relative;
   padding-bottom: 1rem;
 }
-
-/* .portfolio-image {
-  border: 6px solid rgba(3, 65, 252);
-} */
 
 .portfolio-item-hover {
   display: none;
@@ -90,18 +87,38 @@ h1.title {
   display: flex;
 }
 
-.portfolio-item:nth-child(even) .portfolio-item-hover {
+.portfolio-item:nth-child(4n + 1) .portfolio-item-hover {
   background-color: rgba(3, 65, 252, 0.9);
 }
 
-.portfolio-item:nth-child(odd) .portfolio-item-hover {
+.portfolio-item:nth-child(4n + 2) .portfolio-item-hover {
+  background-color: rgba(206, 4, 217, 0.9);
+}
+.portfolio-item:nth-child(4n + 3) .portfolio-item-hover {
   background-color: rgba(4, 189, 32, 0.9);
 }
 
-.portfolio-item:nth-child(3n - 3) .portfolio-item-hover {
-  background-color: rgba(206, 4, 217, 0.9);
+.portfolio-item:nth-child(4n) .portfolio-item-hover {
+  background-color: rgba(250, 154, 0, 0.9);
 }
 
-.portfolio-item:nth-child(4n - 4) .portfolio-item-hover {
-  background-color: rgba(250, 154, 0, 0.9);
+/* Border */
+
+.portfolio-image {
+  border: 3px solid;
+}
+
+.portfolio-item:nth-child(4n + 1) .portfolio-image {
+  border-color: rgba(3, 65, 252, 0.9);
+}
+
+.portfolio-item:nth-child(4n + 2) .portfolio-image {
+  border-color: rgba(206, 4, 217, 0.9);
+}
+.portfolio-item:nth-child(3n - 3) .portfolio-image {
+  border-color: rgba(4, 189, 32, 0.9);
+}
+
+.portfolio-item:nth-child(4n - 4) .portfolio-image {
+  border-color: rgba(250, 154, 0, 0.9);
 }
