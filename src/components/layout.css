@@ -115,10 +115,10 @@ h1.title {
 .portfolio-item:nth-child(4n + 2) .portfolio-image {
   border-color: rgba(206, 4, 217, 0.9);
 }
-.portfolio-item:nth-child(3n - 3) .portfolio-image {
+.portfolio-item:nth-child(4n + 3) .portfolio-image {
   border-color: rgba(4, 189, 32, 0.9);
 }
 
-.portfolio-item:nth-child(4n - 4) .portfolio-image {
+.portfolio-item:nth-child(4n) .portfolio-image {
   border-color: rgba(250, 154, 0, 0.9);
 }
