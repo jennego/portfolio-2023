@@ -43,10 +43,14 @@ const Portfolio = () => {
                 key={node.id}
               >
                 <div>
+                  <div className="portfolio-name-bar">
+                    <h2 className="portfolio-name-title"> {node.name}</h2>
+                  </div>
                   <GatsbyImage
                     image={node.mainPhoto.gatsbyImageData}
                     className="portfolio-image"
                   />
+                  <div></div>
                 </div>
                 <div className="portfolio-item-hover">
                   <div className="overlay-content">
