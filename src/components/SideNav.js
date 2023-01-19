@@ -1,10 +1,9 @@
 import React from "react"
 import ScrollSpy from "react-scrollspy-navigation"
-import { Link } from "gatsby"
 
-const Nav = () => {
+const SideNav = () => {
   return (
-    <div className="navigation">
+    <div className="side-nav">
       <ScrollSpy>
         <a href="#home" ref={React.createRef()}>
           Home
@@ -20,4 +19,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default SideNav

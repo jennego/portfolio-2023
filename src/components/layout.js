@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Nav />
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <main>{children}</main>
       <footer

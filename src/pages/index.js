@@ -6,9 +6,13 @@ import FrontPage from "../components/sections/front"
 import Portfolio from "../components/sections/portfolio"
 import "flexboxgrid/dist/flexboxgrid.min.css"
 import About from "../components/sections/about"
+import Nav from "../components/nav"
+import SideNav from "../components/SideNav"
 
-const IndexPage = () => (
+const IndexPage = ({ pageContext }) => (
   <Layout>
+    <Nav />
+    <SideNav />
     <FrontPage />
     <div>
       <ul>

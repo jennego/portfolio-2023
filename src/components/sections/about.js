@@ -17,7 +17,7 @@ const About = () => {
     }
   `)
   return (
-    <div>
+    <div id="about">
       <h2>About</h2>
       <p> Front-end Dev. Horse lover.Equestrian. Weirdo.</p>
       <GatsbyImage

@@ -38,15 +38,27 @@ h1.title {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 15px;
 }
 
 .heading {
   font-size: 30px;
 }
 
-.nav {
+.navigation,
+.navigation a {
+  color: rgb(197, 244, 239);
+  z-index: 10;
+  font-size: 20px;
+}
+
+.side-nav,
+.side-nav a {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  right: 0;
   top: 0;
-  position: absolute;
+  color: white;
   z-index: 5;
 }
 
