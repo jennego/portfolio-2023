@@ -16,7 +16,6 @@ const IndexPage = ({ pageContext }) => (
     <FrontPage />
     <div>
       <ul>
-        <li>large stylized image w/ some animation?</li>
         <li> Or cutouts? Animate inside</li>
         <li>Name centered</li>
         <li>portfolio</li>

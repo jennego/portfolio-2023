@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;1,400&family=Sen:wght@700&display=swap");
 
 body {
+  background-image: ("/Star.svg");
   font-family: "Libre Franklin", sans-serif;
   background-color: rgb(65, 25, 110);
   color: #f5f2f7;
@@ -47,6 +48,9 @@ h1.title {
   align-items: center;
   flex-direction: column;
   margin-top: 15px;
+  mask-image: url("/Star-cut.png");
+  mask-type: alpha;
+  mask-size: cover;
 }
 
 .heading {
@@ -65,7 +69,8 @@ h1.title {
   position: sticky;
   top: 50vh;
   z-index: 5;
-  float: right;
+  display: flex;
+  justify-content: end;
 }
 .side-nav {
   transform: rotate(90deg);
