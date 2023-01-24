@@ -20,10 +20,6 @@ const About = () => {
     <div id="about">
       <h2>About</h2>
       <p> Front-end Dev. Horse lover.Equestrian. Weirdo.</p>
-      <GatsbyImage
-        image={data.allContentfulSiteInfo.edges[0].node.image.gatsbyImageData}
-        className="portfolio-image"
-      />
     </div>
   )
 }

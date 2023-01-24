@@ -11,12 +11,16 @@ import SideNav from "../components/SideNav"
 
 const IndexPage = ({ pageContext }) => (
   <Layout>
-    <Nav />
+    {/* <Nav /> */}
     <SideNav />
     <FrontPage />
     <div>
       <ul>
         <li> Or cutouts? Animate inside</li>
+        <li>
+          {" "}
+          Maybe just a shape, masked text inside, other info in regular text
+        </li>
         <li>Name centered</li>
         <li>portfolio</li>
         <li>about</li>

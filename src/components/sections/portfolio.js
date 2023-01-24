@@ -33,7 +33,7 @@ const Portfolio = () => {
       <div className="content">
         <div className="row">
           {data.allContentfulPortfolio.edges.map(({ node }) => (
-            <>
+            <React.Fragment key={node.id}>
               <div
                 className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
                 key={node.id}
@@ -45,6 +45,7 @@ const Portfolio = () => {
                   <GatsbyImage
                     image={node.mainPhoto.gatsbyImageData}
                     className="portfolio-image"
+                    alt={`${node.name} screenshot`}
                   />
                   <div></div>
                 </div>
@@ -58,7 +59,7 @@ const Portfolio = () => {
                   </div>
                 </div>
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
