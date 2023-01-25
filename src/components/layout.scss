@@ -70,10 +70,23 @@ h1.title {
   top: 50vh;
   z-index: 5;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 1rem;
 }
 .side-nav {
   // background-color: rgba(5, 5, 5, 0.8);
+}
+
+.bullet-active {
+  content: url(/circle-solid.svg);
+  height: 16px;
+  width: 16px;
+  color: rgb(197, 244, 239);
+
+  svg {
+    fill: aqua;
+  }
 }
 
 .side-nav a {
