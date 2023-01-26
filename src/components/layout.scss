@@ -82,10 +82,13 @@ h1.title {
   content: url(/circle-solid.svg);
   height: 16px;
   width: 16px;
-  color: rgb(197, 244, 239);
+}
 
-  svg {
-    fill: aqua;
+.bullet-nav:hover {
+  .bullet-active {
+    content: url(/circle-solid.svg);
+    height: 16px;
+    width: 16px;
   }
 }
 
