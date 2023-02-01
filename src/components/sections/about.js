@@ -21,7 +21,7 @@ const About = () => {
   const text = data.allContentfulSiteInfo.edges[0].node.aboutRt
   return (
     <div id="about">
-      <h2>About</h2>
+      <h2 className="heading">About</h2>
       <p> Front-end Dev. Horse lover.Equestrian. Weirdo.</p>
       {renderRichText(text)}
     </div>
