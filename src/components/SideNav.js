@@ -32,21 +32,6 @@ const SideNav = () => {
           </div>
         </a>
       </ScrollSpy>
-
-      {/* <div className="side-nav">
-        <ScrollSpy className="bullet-active">
-          Just use bullet nav!!
-          <a href="#home" ref={React.createRef()}>
-            <FontAwesomeIcon icon={faCircle} />
-          </a>
-          <a href="#portfolio" ref={React.createRef()}>
-            <FontAwesomeIcon icon={faCircleOutline} />
-          </a>
-          <a href="#about" ref={React.createRef()}>
-            <FontAwesomeIcon icon="fa-solid fa-circle" />
-          </a>
-        </ScrollSpy>
-      </div> */}
     </div>
   )
 }

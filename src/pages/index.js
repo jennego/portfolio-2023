@@ -11,7 +11,7 @@ import SideNav from "../components/SideNav"
 
 const IndexPage = ({ pageContext }) => (
   <Layout>
-    {/* <Nav /> */}
+    <Nav />
     <SideNav />
     <FrontPage />
     <div>
