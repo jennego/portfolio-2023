@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const Portfolio = () => {
@@ -10,6 +10,7 @@ const Portfolio = () => {
           node {
             id
             name
+            slug
             shortDescription
             categories
             mainPhoto {
@@ -38,26 +39,27 @@ const Portfolio = () => {
                 className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
                 key={node.id}
               >
-                <div>
-                  <div className="portfolio-name-bar">
-                    <h2 className="portfolio-name-title"> {node.name}</h2>
+                <Link to={`/projects/${node.slug}`}>
+                  <div>
+                    <div className="portfolio-name-bar">
+                      <h2 className="portfolio-name-title"> {node.name}</h2>
+                    </div>
+                    <GatsbyImage
+                      image={node.mainPhoto.gatsbyImageData}
+                      className="portfolio-image"
+                      alt={`${node.name} screenshot`}
+                    />
                   </div>
-                  <GatsbyImage
-                    image={node.mainPhoto.gatsbyImageData}
-                    className="portfolio-image"
-                    alt={`${node.name} screenshot`}
-                  />
-                  <div></div>
-                </div>
-                <div className="portfolio-item-hover">
-                  <div className="overlay-content">
-                    <h2 className="portfolio-item-name"> {node.name}</h2>
-                    <p className="portfolio-item-description">
-                      {node.shortDescription}
-                    </p>
-                    <p>{node.categories}</p>
+                  <div className="portfolio-item-hover">
+                    <div className="overlay-content">
+                      <h2 className="portfolio-item-name"> {node.name}</h2>
+                      <p className="portfolio-item-description">
+                        {node.shortDescription}
+                      </p>
+                      <p>{node.categories}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </React.Fragment>
           ))}
