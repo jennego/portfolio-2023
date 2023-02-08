@@ -43,9 +43,18 @@ const Project = ({ data, pageContext }) => {
         <div className="col-sm-12 col-lg-4">Bunch of info</div>
       </div>
       <div className="row">
-        <div className="col-12"></div>
+        <div className="col-xs-12">
+          <div>{renderRichText(project.longDescriptionRt)}</div>
+          {project.gallery
+            ? project.gallery.map(image => (
+                <div>
+                  <GatsbyImage image={image.gatsbyImageData} />
+                </div>
+              ))
+            : ""}
+        </div>
       </div>
-      {console.log(pageContext.id)}
+      {console.log(project.gallery)}
     </div>
   )
 }
