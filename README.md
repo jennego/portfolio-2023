@@ -7,7 +7,6 @@ To do
 
 - make portfolio page template
   - figure out how to display that (modals or separate pages)
-- add about content
 - style bullet and main nav
 - add contact + social media
 - style footer
