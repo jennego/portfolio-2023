@@ -40,7 +40,19 @@ const Project = ({ data, pageContext }) => {
         <div className="col-sm-12 col-md 8">
           <GatsbyImage image={project.mainPhoto.gatsbyImageData} />
         </div>
-        <div className="col-sm-12 col-lg-4">Bunch of info</div>
+
+        <div className="col-sm-12 col-lg-4">
+          <ul>
+            <li>{project.name}</li>
+            <li>{project.date}</li>
+            <li> {project.type}</li>
+            <li>{project.shortDescription}</li>
+            <li>{project.techSkills}</li>
+            <li>{project.otherSkills ? project.otherSkills : ""}</li>
+            <li>{project.githubUrl ? project.githubUrl : ""} </li>
+            <li>{project.projectUrl ? project.projectUrl : ""} </li>
+          </ul>
+        </div>
       </div>
       <div className="row">
         <div className="col-xs-12">
