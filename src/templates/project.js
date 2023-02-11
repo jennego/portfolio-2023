@@ -44,7 +44,7 @@ const Project = ({ data, pageContext }) => {
         <div className="col-sm-12 col-lg-4">
           <ul>
             <li>{project.name}</li>
-            <li>{project.date}</li>
+            <li>{project.projectDate}</li>
             <li> {project.type}</li>
             <li>{project.shortDescription}</li>
             <li>{project.techSkills}</li>
