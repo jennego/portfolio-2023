@@ -19,7 +19,7 @@ export const query = graphql`
       techSkills
       otherSkills
       mainPhoto {
-        gatsbyImageData(height: 500)
+        gatsbyImageData(layout: FULL_WIDTH)
       }
       longDescriptionRt {
         raw
@@ -37,26 +37,30 @@ const Project = ({ data, pageContext }) => {
     <div>
       <h1>{project.name}</h1>
       <div className="row">
-        <div className="col-sm-12 col-md 8">
+        <div className="col-sm-12 col-md-8">
           <GatsbyImage image={project.mainPhoto.gatsbyImageData} />
         </div>
 
-        <div className="col-sm-12 col-lg-4">
+        <div className="infobox col-sm-12 col-md-4">
           <ul>
             <li>{project.name}</li>
-            <li>{project.projectDate}</li>
-            <li> {project.type}</li>
+            <li>Date: {project.projectDate}</li>
+            <li>Type: {project.type}</li>
             <li>{project.shortDescription}</li>
-            <li>{project.techSkills}</li>
-            <li>{project.otherSkills ? project.otherSkills : ""}</li>
-            <li>{project.githubUrl ? project.githubUrl : ""} </li>
-            <li>{project.projectUrl ? project.projectUrl : ""} </li>
+            <li>Tech Skills: {project.techSkills}</li>
+            <li>
+              Other Skills: {project.otherSkills ? project.otherSkills : ""}
+            </li>
+            <li>Github: {project.githubUrl ? project.githubUrl : ""} </li>
+            <li>Project: {project.projectUrl ? project.projectUrl : ""} </li>
           </ul>
         </div>
       </div>
       <div className="row">
-        <div className="col-xs-12">
-          <div>{renderRichText(project.longDescriptionRt)}</div>
+        <div className="col-xs-12 col-md-10 col-lg-8">
+          <div className="project-long-text">
+            {renderRichText(project.longDescriptionRt)}
+          </div>
           {project.gallery
             ? project.gallery.map(image => (
                 <div>
