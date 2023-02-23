@@ -56,7 +56,9 @@ const Portfolio = () => {
                       <p className="portfolio-item-description">
                         {node.shortDescription}
                       </p>
-                      <p>{node.categories}</p>
+                      <p className="portfolio-cat">
+                        {node.categories.toString().replaceAll(",", ", ")}
+                      </p>
                     </div>
                   </div>
                 </Link>

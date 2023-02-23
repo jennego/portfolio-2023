@@ -226,12 +226,20 @@ h2.portfolio-name-title {
     border-color: rgba(250, 154, 0, 0.9);
   }
 }
+.portfolio-item-description,
+.portfolio-cat {
+  font-size: 1.1rem;
+}
 
 footer {
   background: #281742;
   color: grey;
   padding: 1rem;
   height: 3rem;
+}
+
+.social-media > a {
+  padding: 0.2rem;
 }
 
 // portfolio page
