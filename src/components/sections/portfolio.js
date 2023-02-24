@@ -1,6 +1,9 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
+// anilink does not work
 
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
@@ -33,13 +36,16 @@ const Portfolio = () => {
 
       <div className="content">
         <div className="row">
+          {/* <AniLink cover to="page-4">
+            Go to Page 4
+          </AniLink> */}
           {data.allContentfulPortfolio.edges.map(({ node }) => (
             <React.Fragment key={node.id}>
               <div
                 className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
                 key={node.id}
               >
-                <Link to={`/projects/${node.slug}`}>
+                <Link fade to={`/projects/${node.slug}`}>
                   <div>
                     <div className="portfolio-name-bar">
                       <h2 className="portfolio-name-title"> {node.name}</h2>
