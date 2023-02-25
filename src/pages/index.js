@@ -9,19 +9,24 @@ import "flexboxgrid/dist/flexboxgrid.min.css"
 import About from "../components/sections/about"
 import Nav from "../components/nav"
 import SideNav from "../components/SideNav"
-import AOS from "aos"
-import "aos/dist/aos.css"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+
+const boxVariant = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+}
 
 const IndexPage = ({ pageContext }) => {
-  useEffect(() => {
-    AOS.init()
-  }, [])
+  const control = useAnimation()
+  const [ref, inView] = useInView()
 
   return (
     <Layout>
       <Nav />
       <SideNav />
       <FrontPage />
+
       <div>
         <ul>
           <li> Or cutouts? Animate inside</li>
@@ -34,6 +39,7 @@ const IndexPage = ({ pageContext }) => {
           <li>about</li>
         </ul>
       </div>
+
       <Portfolio />
       <About />
     </Layout>

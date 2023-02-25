@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 // anilink does not work
 
