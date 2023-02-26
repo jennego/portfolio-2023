@@ -5,10 +5,43 @@ import { useStaticQuery, graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { BLOCKS } from "@contentful/rich-text-types"
 
 const fadeVariant = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0, transition: { duration: 5 } },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+}
+
+const containerVariant = {
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+      when: "beforeChildren", //use this instead of delay
+      staggerChildren: 0.2, //apply stagger on the parent tag
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+}
+
+const childParagraphVariant = {
+  hidden: {
+    x: -10, //move out of the site
+    opacity: 0,
+  },
+  visible: {
+    x: 0, // bring it back to nrmal
+    opacity: 1,
+  },
 }
 
 const About = () => {
@@ -37,25 +70,30 @@ const About = () => {
     }
   }, [control, inView])
 
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <motion.p variants={childParagraphVariant}>{children}</motion.p>
+      ),
+    },
+  }
+
   const text = data.allContentfulSiteInfo.edges[0].node.aboutRt
+
   return (
     <div id="about">
-      <motion.div
-        variants={fadeVariant}
-        initial="hidden"
-        animate={control}
-        ref={ref}
-      >
+      <motion.div variants={fadeVariant} initial="hidden" animate={control}>
         <h2 className="heading">About</h2>
       </motion.div>
       <p> Front-end Dev. Horse lover.Equestrian. Weirdo.</p>
+
       <motion.div
-        variants={fadeVariant}
+        variants={containerVariant}
         initial="hidden"
         animate={control}
         ref={ref}
       >
-        {renderRichText(text)}
+        {renderRichText(text, options)}
       </motion.div>
 
       <motion.div
