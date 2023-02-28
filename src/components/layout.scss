@@ -250,6 +250,16 @@ footer {
 
 // portfolio page
 
+.top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exit-icon {
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
 .infobox {
   background-color: rgb(40, 23, 66);
   font-size: 18px;
@@ -257,4 +267,14 @@ footer {
 
 .project-long-text {
   padding: 0 1rem;
+}
+
+.trans-cover {
+  background-color: rebeccapurple;
+  height: 100vh;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }

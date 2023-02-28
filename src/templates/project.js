@@ -1,8 +1,11 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import "flexboxgrid/dist/flexboxgrid.min.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { motion } from "framer-motion"
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const query = graphql`
   query projectQuery($id: String!) {
@@ -31,11 +34,55 @@ export const query = graphql`
   }
 `
 
+const slideCoverVariant = {
+  visible: {
+    opacity: 1,
+    x: 1500,
+    transition: {
+      x: { duration: 2 },
+      delay: 0.3,
+      type: "spring",
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: 0,
+  },
+}
+const fadeVariant = {
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+}
+
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
   return (
-    <div>
-      <h1>{project.name}</h1>
+    <motion.div variants={fadeVariant} initial="hidden" animate="visible">
+      {/* <motion.div
+        variants={slideCoverVariant}
+        initial="hidden"
+        animate="visible"
+        className="trans-cover"
+      ></motion.div> */}
+      <div className="top-row">
+        <h1>{project.name}</h1>
+        <Link to="/">
+          <div className="exit">
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              size="2x"
+              className="exit-icon"
+            />
+          </div>
+        </Link>
+      </div>
       <div className="row">
         <div className="col-sm-12 col-md-8">
           <GatsbyImage image={project.mainPhoto.gatsbyImageData} />
@@ -71,7 +118,7 @@ const Project = ({ data, pageContext }) => {
         </div>
       </div>
       {console.log(project.gallery)}
-    </div>
+    </motion.div>
   )
 }
 
