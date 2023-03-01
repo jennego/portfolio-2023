@@ -64,7 +64,12 @@ const fadeVariant = {
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
   return (
-    <motion.div variants={fadeVariant} initial="hidden" animate="visible">
+    <motion.div
+      variants={fadeVariant}
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0 }}
+    >
       {/* <motion.div
         variants={slideCoverVariant}
         initial="hidden"
@@ -118,6 +123,11 @@ const Project = ({ data, pageContext }) => {
         </div>
       </div>
       {console.log(project.gallery)}
+      <div className="row">
+        <div>Back</div>
+        <div>Home</div>
+        <div>Next</div>
+      </div>
     </motion.div>
   )
 }

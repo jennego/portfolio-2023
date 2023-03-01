@@ -9,39 +9,19 @@ import "flexboxgrid/dist/flexboxgrid.min.css"
 import About from "../components/sections/about"
 import Nav from "../components/nav"
 import SideNav from "../components/SideNav"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-
-const boxVariant = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 },
-}
+import Contact from "../components/sections/contact"
+import ShortIntro from "../components/sections/short-intro"
 
 const IndexPage = ({ pageContext }) => {
-  const control = useAnimation()
-  const [ref, inView] = useInView()
-
   return (
     <Layout>
       <Nav />
       <SideNav />
       <FrontPage />
-
-      <div>
-        <ul>
-          <li> Or cutouts? Animate inside</li>
-          <li>
-            {" "}
-            Maybe just a shape, masked text inside, other info in regular text
-          </li>
-          <li>Name centered</li>
-          <li>portfolio</li>
-          <li>about</li>
-        </ul>
-      </div>
-
+      <ShortIntro />
       <Portfolio />
       <About />
+      <Contact />
     </Layout>
   )
 }

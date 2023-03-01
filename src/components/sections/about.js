@@ -10,9 +10,6 @@ import { BLOCKS } from "@contentful/rich-text-types"
 const fadeVariant = {
   visible: {
     opacity: 1,
-    transition: {
-      delay: 1,
-    },
   },
   hidden: {
     opacity: 0,
@@ -23,7 +20,6 @@ const containerVariant = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1,
       when: "beforeChildren", //use this instead of delay
       staggerChildren: 0.2, //apply stagger on the parent tag
     },
