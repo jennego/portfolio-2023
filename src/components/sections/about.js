@@ -77,7 +77,7 @@ const About = () => {
   const text = data.allContentfulSiteInfo.edges[0].node.aboutRt
 
   return (
-    <div id="about">
+    <div id="about section">
       <motion.div variants={fadeVariant} initial="hidden" animate={control}>
         <h2 className="heading">About</h2>
       </motion.div>

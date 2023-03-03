@@ -133,6 +133,24 @@ h2.heading {
   padding: 1rem;
 }
 
+.introbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+.introbox {
+  width: 75%;
+  background-color: #281742;
+  padding: 0.5rem 2rem;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+// for all sections
+.section {
+  padding: 5rem 0;
+}
+
 .portfolio-item {
   position: relative;
   padding-bottom: 1rem;

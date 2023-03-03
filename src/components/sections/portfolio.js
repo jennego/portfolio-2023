@@ -69,7 +69,7 @@ const Portfolio = () => {
   }, [control, inView])
 
   return (
-    <div id="portfolio">
+    <div id="portfolio" className="section">
       <h2 className="heading">Portfolio</h2>
 
       <div className="content">
