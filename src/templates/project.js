@@ -6,6 +6,11 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { motion } from "framer-motion"
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faLaptop,
+  faTag,
+  faWandMagicSparkles,
+} from "@fortawesome/free-solid-svg-icons"
 
 export const query = graphql`
   query projectQuery($id: String!) {
@@ -13,7 +18,7 @@ export const query = graphql`
       id
       name
       slug
-      projectDate
+      projectDate(formatString: "MMMM D, YYYY")
       projectUrl
       shortDescription
       githubUrl
@@ -61,6 +66,16 @@ const fadeVariant = {
   },
 }
 
+const skillItem = (title, icon, content) => (
+  <li className="skill-item">
+    <span style={{ paddingRight: "0.5rem" }}>
+      <FontAwesomeIcon icon={icon} className="skill-icon" />
+      <strong>{title}:</strong>
+    </span>
+    {content} gfghcc hfhmfhtfgndhgfgngn hfmyfyfmyffgmhghgvh fmhfhgfh
+  </li>
+)
+
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
   return (
@@ -95,14 +110,22 @@ const Project = ({ data, pageContext }) => {
 
         <div className="infobox col-sm-12 col-md-4">
           <ul>
-            <li>{project.name}</li>
+            <li>
+              <strong>{project.name}</strong>
+            </li>
             <li>Date: {project.projectDate}</li>
             <li>Type: {project.type}</li>
             <li>{project.shortDescription}</li>
-            <li>Tech Skills: {project.techSkills}</li>
-            <li>
-              Other Skills: {project.otherSkills ? project.otherSkills : ""}
-            </li>
+            {project.techSkills
+              ? skillItem("Tech Skills", faLaptop, project.techSkills)
+              : ""}
+            {project.otherSkills
+              ? skillItem(
+                  "Other Skills",
+                  faWandMagicSparkles,
+                  project.otherSkills
+                )
+              : ""}
             <li>Github: {project.githubUrl ? project.githubUrl : ""} </li>
             <li>Project: {project.projectUrl ? project.projectUrl : ""} </li>
           </ul>

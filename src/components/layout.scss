@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;1,400&family=Sen:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,400&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 .box {
   background-color: blue;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: rgb(65, 25, 110);
   color: #f5f2f7;
   margin: 0;
@@ -28,7 +28,8 @@ a {
 
 h1,
 h2 {
-  font-family: "Sen", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
 }
 
 h1.title {
@@ -143,7 +144,9 @@ h2.heading {
   background-color: #281742;
   padding: 0.5rem 2rem;
   font-size: 21px;
-  line-height: 1;
+  line-height: 1.4;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
 }
 
 // for all sections
@@ -281,6 +284,15 @@ footer {
 .infobox {
   background-color: rgb(40, 23, 66);
   font-size: 18px;
+}
+
+.infobox ul li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.skill-icon {
+  padding-right: 5px;
 }
 
 .project-long-text {
