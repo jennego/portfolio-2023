@@ -11,6 +11,7 @@ import {
   faTag,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons"
+import { tagsWithIcons } from "../components/tech-skills-tags"
 
 export const query = graphql`
   query projectQuery($id: String!) {
@@ -78,6 +79,9 @@ const skillItem = (title, icon, content) => (
 
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
+
+  let tags = tagsWithIcons(data.contentfulPortfolio.categories)
+
   return (
     <motion.div
       variants={fadeVariant}
@@ -133,6 +137,7 @@ const Project = ({ data, pageContext }) => {
       </div>
       <div className="row">
         <div className="col-xs-12 col-md-10 col-lg-8">
+          {tags}
           <div className="project-long-text">
             {renderRichText(project.longDescriptionRt)}
           </div>
@@ -145,6 +150,7 @@ const Project = ({ data, pageContext }) => {
             : ""}
         </div>
       </div>
+
       {console.log(project.gallery)}
       <div className="row">
         <div>Back</div>

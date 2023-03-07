@@ -1,7 +1,7 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import AOS from "aos"
-import "aos/dist/aos.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 
 const FrontPage = () => {
   return (
@@ -20,7 +20,11 @@ const FrontPage = () => {
           <h1 className="title">Jennifer Chow</h1>
         </div>
         <br />
-        <p>match it, animation? greyscale and stylize photo </p>
+        <p>Web Developer</p>
+
+        <div style={{ paddingTop: "2rem" }}>
+          <FontAwesomeIcon icon={faArrowDown} size="2x" />
+        </div>
       </div>
     </div>
   )
