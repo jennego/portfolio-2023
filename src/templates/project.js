@@ -1,9 +1,9 @@
 import * as React from "react"
+import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import "flexboxgrid/dist/flexboxgrid.min.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { motion } from "framer-motion"
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -12,6 +12,8 @@ import {
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons"
 import { tagsWithIcons } from "../components/tech-skills-tags"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 export const query = graphql`
   query projectQuery($id: String!) {
@@ -82,6 +84,17 @@ const Project = ({ data, pageContext }) => {
 
   let tags = tagsWithIcons(data.contentfulPortfolio.categories)
 
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible")
+    } else {
+      control.start("hidden")
+    }
+  }, [control, inView])
+
   return (
     <motion.div
       variants={fadeVariant}
@@ -143,9 +156,9 @@ const Project = ({ data, pageContext }) => {
           </div>
           {project.gallery
             ? project.gallery.map(image => (
-                <div>
+                <motion.div variants={fadeVariant}>
                   <GatsbyImage image={image.gatsbyImageData} />
-                </div>
+                </motion.div>
               ))
             : ""}
         </div>

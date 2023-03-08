@@ -33,7 +33,7 @@ export const tagsWithIcons = (catArray, size) => {
     <div>
       {iconArray.map(icon => (
         <span className="category-tag">
-          <FontAwesomeIcon icon={icon[0]} /> {icon[1]}
+          {icon[0] ? <FontAwesomeIcon icon={icon[0]} /> : ""} {icon[1]}
         </span>
       ))}
     </div>
