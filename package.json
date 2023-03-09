@@ -18,6 +18,7 @@
     "gatsby-plugin-manifest": "^5.0.0",
     "gatsby-plugin-sass": "^6.4.0",
     "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-plugin-static-page-modal": "^1.0.4",
     "gatsby-source-contentful": "^8.3.1",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
