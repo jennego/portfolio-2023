@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sass`,
+    `mini-css-extract-plugin`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-contentful`,
