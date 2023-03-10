@@ -4,7 +4,11 @@ import { graphql, Link } from "gatsby"
 import "flexboxgrid/dist/flexboxgrid.min.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons"
+import {
+  faXmark,
+  faArrowRight,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLaptop,
@@ -112,11 +116,7 @@ const Project = ({ data, pageContext }) => {
         <h1>{project.name}</h1>
         <Link to="/">
           <div className="exit">
-            <FontAwesomeIcon
-              icon={faCircleXmark}
-              size="2x"
-              className="exit-icon"
-            />
+            <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
           </div>
         </Link>
       </div>
@@ -165,10 +165,17 @@ const Project = ({ data, pageContext }) => {
       </div>
 
       {console.log(project.gallery)}
-      <div className="row">
-        <div>Back</div>
-        <div>Home</div>
-        <div>Next</div>
+
+      <div className="project-nav-container">
+        <div className="row project-nav">
+          <div>
+            <FontAwesomeIcon icon={faArrowLeft} size="2x" />
+          </div>
+          <div>Go Back</div>
+          <div>
+            <FontAwesomeIcon icon={faArrowRight} size="2x" />
+          </div>
+        </div>
       </div>
     </motion.div>
   )

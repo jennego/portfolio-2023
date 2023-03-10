@@ -299,6 +299,18 @@ footer {
   padding: 0 1rem;
 }
 
+.project-nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+}
+
 .trans-cover {
   background-color: rebeccapurple;
   height: 100vh;
