@@ -46,21 +46,33 @@ export const query = graphql`
   }
 `
 
-const slideCoverVariant = {
+const containerVariant = {
   visible: {
     opacity: 1,
-    x: 1500,
     transition: {
-      x: { duration: 2 },
-      delay: 0.3,
-      type: "spring",
+      when: "beforeChildren", //use this instead of delay
+      staggerChildren: 0.2, //apply stagger on the parent tag
     },
   },
   hidden: {
     opacity: 0,
-    x: 0,
   },
 }
+
+const itemVariant = {
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "linear",
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: -10,
+  },
+}
+
 const fadeVariant = {
   visible: {
     opacity: 1,
@@ -85,6 +97,7 @@ const skillItem = (title, icon, content) => (
 
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
+  console.log(pageContext)
 
   let tags = tagsWithIcons(data.contentfulPortfolio.categories)
 
@@ -154,26 +167,54 @@ const Project = ({ data, pageContext }) => {
           <div className="project-long-text">
             {renderRichText(project.longDescriptionRt)}
           </div>
+          {/* <motion.div
+            className="row"
+            variants={containerVariant}
+            initial="hidden"
+          > */}
           {project.gallery
             ? project.gallery.map(image => (
-                <motion.div variants={fadeVariant}>
+                <motion.div
+                  variants={fadeVariant}
+                  key={image.id}
+                  ref={ref}
+                  animate={control}
+                  initial="hidden"
+                >
+                  <h2>{`Header inside viewport ${inView}.`}</h2>
                   <GatsbyImage image={image.gatsbyImageData} />
                 </motion.div>
               ))
             : ""}
+          {/* </motion.div> */}
         </div>
       </div>
-
-      {console.log(project.gallery)}
 
       <div className="project-nav-container">
         <div className="row project-nav">
           <div>
-            <FontAwesomeIcon icon={faArrowLeft} size="2x" />
+            {pageContext.prev ? (
+              <Link to={`/projects/${pageContext.prev.slug}`}>
+                {" "}
+                <FontAwesomeIcon icon={faArrowLeft} size="2x" />{" "}
+              </Link>
+            ) : (
+              ""
+            )}
           </div>
-          <div>Go Back</div>
           <div>
-            <FontAwesomeIcon icon={faArrowRight} size="2x" />
+            {" "}
+            <Link to="/">Go Back to Main Site</Link>
+          </div>
+          <div>
+            {pageContext.next ? (
+              <Link to={`/projects/${pageContext.next.slug}`}>
+                {" "}
+                <FontAwesomeIcon icon={faArrowRight} size="2x" />{" "}
+              </Link>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
