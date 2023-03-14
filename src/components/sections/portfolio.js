@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { motion, useAnimation } from "framer-motion"
@@ -57,8 +57,26 @@ const Portfolio = () => {
     },
   }
 
+  const growVariant = {
+    regular: {
+      scale: 1,
+    },
+    grow: {
+      scale: 5,
+      transition: {
+        type: "linear",
+      },
+    },
+  }
+
   const control = useAnimation()
+  const clickAnimation = useAnimation()
   const [ref, inView] = useInView()
+  const [clickState, setClickState] = useState(false)
+
+  const clickHandler = click => {
+    clickState ? setClickState(false) : setClickState(true)
+  }
 
   useEffect(() => {
     if (inView) {
@@ -68,11 +86,20 @@ const Portfolio = () => {
     }
   }, [control, inView])
 
+  useEffect(() => {
+    if (clickState) {
+      clickAnimation.start("grow")
+    } else {
+      clickAnimation.start("normal")
+    }
+  }, [clickAnimation, clickState])
+
   return (
     <div id="portfolio" className="section">
       <h2 className="heading">Portfolio</h2>
 
       <div className="content">
+        {clickState}
         <motion.div
           className="row"
           variants={containerVariant}
@@ -86,7 +113,9 @@ const Portfolio = () => {
               key={node.id}
               className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
             >
-              <Link to={`/projects/${node.slug}`}>
+              <Link
+              // to={`/projects/${node.slug}`}
+              >
                 <div>
                   <div className="portfolio-name-bar">
                     <h2 className="portfolio-name-title"> {node.name}</h2>
@@ -97,8 +126,13 @@ const Portfolio = () => {
                     alt={`${node.name} screenshot`}
                   />
                 </div>
-                <div className="portfolio-item-hover">
-                  <div className="overlay-content">
+                <motion.div
+                  className="portfolio-item-hover"
+                  initial="normal"
+                  animate={clickAnimation}
+                  variants={growVariant}
+                >
+                  <div className="overlay-content" onClick={clickHandler}>
                     <h2 className="portfolio-item-name"> {node.name}</h2>
                     <p className="portfolio-item-description">
                       {node.shortDescription}
@@ -107,7 +141,7 @@ const Portfolio = () => {
                       {node.categories.toString().replaceAll(",", ", ")}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </Link>
             </motion.div>
           ))}
