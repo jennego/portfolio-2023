@@ -91,9 +91,11 @@ const skillItem = (title, icon, content) => (
       <FontAwesomeIcon icon={icon} className="skill-icon" />
       <strong>{title}:</strong>
     </span>
-    {content} gfghcc hfhmfhtfgndhgfgngn hfmyfyfmyffgmhghgvh fmhfhgfh
+    {content.toString().replaceAll(",", ", ")}
   </li>
 )
+
+//  node.categories.toString().replaceAll(",", ", ")
 
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
@@ -135,7 +137,10 @@ const Project = ({ data, pageContext }) => {
       </div>
       <div className="row">
         <div className="col-sm-12 col-md-8">
-          <GatsbyImage image={project.mainPhoto.gatsbyImageData} />
+          <GatsbyImage
+            image={project.mainPhoto.gatsbyImageData}
+            alt={project.mainPhoto.title}
+          />
         </div>
 
         <div className="infobox col-sm-12 col-md-4">
