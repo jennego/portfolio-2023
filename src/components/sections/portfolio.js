@@ -4,6 +4,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { tagsWithIcons, tagMapToIcons } from "../tech-skills-tags"
 
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
@@ -104,7 +105,7 @@ const Portfolio = () => {
                       {node.shortDescription}
                     </p>
                     <p className="portfolio-cat">
-                      {node.categories.toString().replaceAll(",", ", ")}
+                      {tagsWithIcons(tagMapToIcons(node.categories))}
                     </p>
                   </div>
                 </div>

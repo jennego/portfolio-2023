@@ -312,12 +312,10 @@ footer {
   width: 98%;
 }
 
-.trans-cover {
-  background-color: rebeccapurple;
-  height: 100vh;
-  z-index: 5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.category-tag {
+  padding: 5px 10px;
+  margin: 0.2rem;
+  border: dashed white 1px;
+  background: rgba(40, 23, 66, 0.7);
+  border-radius: 25px;
 }

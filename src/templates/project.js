@@ -15,7 +15,7 @@ import {
   faTag,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons"
-import { tagsWithIcons } from "../components/tech-skills-tags"
+import { tagsWithIcons, tagMapToIcons } from "../components/tech-skills-tags"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
@@ -34,6 +34,7 @@ export const query = graphql`
       techSkills
       otherSkills
       mainPhoto {
+        filename
         gatsbyImageData(layout: FULL_WIDTH)
       }
       longDescriptionRt {
@@ -101,7 +102,9 @@ const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
   console.log(pageContext)
 
-  let tags = tagsWithIcons(data.contentfulPortfolio.categories)
+  let tags = tagMapToIcons(data.contentfulPortfolio.categories).toString()
+
+  console.log(tagMapToIcons(data.contentfulPortfolio.categories))
 
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -139,7 +142,7 @@ const Project = ({ data, pageContext }) => {
         <div className="col-sm-12 col-md-8">
           <GatsbyImage
             image={project.mainPhoto.gatsbyImageData}
-            alt={project.mainPhoto.title}
+            alt={project.mainPhoto.filename}
           />
         </div>
 
