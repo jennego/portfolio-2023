@@ -87,7 +87,7 @@ const Portfolio = () => {
               key={node.id}
               className="col-xs-12 col-sm-6 col-lg-4 portfolio-item"
             >
-              <Link to={`/projects/${node.slug}`}>
+              <Link to={`/projects/${node.slug}`} state={{ fromHome: true }}>
                 <div>
                   <div className="portfolio-name-bar">
                     <h2 className="portfolio-name-title"> {node.name}</h2>

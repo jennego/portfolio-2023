@@ -100,12 +100,10 @@ const skillItem = (title, icon, content) => (
 
 //  node.categories.toString().replaceAll(",", ", ")
 
-const Project = ({ data, pageContext }) => {
+const Project = ({ location, data, pageContext }) => {
   const project = data.contentfulPortfolio
 
   let tags = tagMapToIcons(data.contentfulPortfolio.categories).toString()
-
-  console.log(History.state)
 
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -133,11 +131,7 @@ const Project = ({ data, pageContext }) => {
       ></motion.div> */}
       <div className="top-row">
         <h1>{project.name}</h1>
-        <a
-          onClick={e => {
-            console.log(navigate(-1))
-          }}
-        >
+        <a onClick={e => (location.state ? navigate(-1) : navigate("/"))}>
           <div className="exit">
             <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
           </div>
