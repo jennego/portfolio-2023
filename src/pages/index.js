@@ -11,10 +11,12 @@ import Nav from "../components/nav"
 import SideNav from "../components/SideNav"
 import Contact from "../components/sections/contact"
 import ShortIntro from "../components/sections/short-intro"
+import { useScrollRestoration } from "gatsby"
 
 const IndexPage = ({ pageContext }) => {
+  const pageScrollRestoration = useScrollRestoration(`scroll-position`)
   return (
-    <Layout>
+    <Layout {...pageScrollRestoration}>
       <Nav />
       <SideNav />
       <FrontPage />

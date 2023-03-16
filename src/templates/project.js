@@ -18,6 +18,8 @@ import {
 import { tagsWithIcons, tagMapToIcons } from "../components/tech-skills-tags"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { useLocation } from "@reach/router"
+import { navigate } from "gatsby"
 
 export const query = graphql`
   query projectQuery($id: String!) {
@@ -100,11 +102,10 @@ const skillItem = (title, icon, content) => (
 
 const Project = ({ data, pageContext }) => {
   const project = data.contentfulPortfolio
-  console.log(pageContext)
 
   let tags = tagMapToIcons(data.contentfulPortfolio.categories).toString()
 
-  console.log(tagMapToIcons(data.contentfulPortfolio.categories))
+  console.log(History.state)
 
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -132,11 +133,15 @@ const Project = ({ data, pageContext }) => {
       ></motion.div> */}
       <div className="top-row">
         <h1>{project.name}</h1>
-        <Link to="/">
+        <a
+          onClick={e => {
+            console.log(navigate(-1))
+          }}
+        >
           <div className="exit">
             <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
           </div>
-        </Link>
+        </a>
       </div>
       <div className="row">
         <div className="col-sm-12 col-md-8">

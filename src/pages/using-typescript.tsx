@@ -19,6 +19,9 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
     <h1>
       Gatsby supports <b>TypeScript by default</b>
     </h1>
+    <Link>
+      <h1>Go Home</h1>
+    </Link>
     <p>
       This means that you can create and write <code>.ts/.tsx</code> files for
       your pages, components, and <code>gatsby-*</code> configuration files (for

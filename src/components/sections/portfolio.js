@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useEffect } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link, useScrollRestoration } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"

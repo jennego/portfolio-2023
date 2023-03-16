@@ -1,8 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const Contact = () => {
   return (
     <div className="contact section">
+      <Link to="/using-typescript"> Link with Link </Link>
+      <a href="/using-typescript"> Link with ahref </a>
+
       <h1 className="heading">Contact </h1>
       <p>Social media</p>
       <p>Web sites</p>
