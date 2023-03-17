@@ -131,7 +131,8 @@ const Project = ({ location, data, pageContext }) => {
       ></motion.div> */}
       <div className="top-row">
         <h1>{project.name}</h1>
-        <a onClick={e => (location.state ? navigate(-1) : navigate("/"))}>
+        {/* <a onClick={e => (location.state ? navigate(-1) : navigate("/"))}> */}
+        <a onClick={e => navigate(-1)}>
           <div className="exit">
             <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
           </div>
