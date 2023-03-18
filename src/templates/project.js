@@ -132,11 +132,11 @@ const Project = ({ location, data, pageContext }) => {
       <div className="top-row">
         <h1>{project.name}</h1>
         {/* <a onClick={e => (location.state ? navigate(-1) : navigate("/"))}> */}
-        <a onClick={e => navigate(-1)}>
+        <Link to="/#portfolio">
           <div className="exit">
             <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
           </div>
-        </a>
+        </Link>
       </div>
       <div className="row">
         <div className="col-sm-12 col-md-8">

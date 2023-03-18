@@ -6,6 +6,8 @@ Mostly one page.
 
 To do
 
+- fix scroll issues without using browser back
+  - track scrolly => send state to page?
 - animate portfolio page transitions
 - animate sections including front page
 - add filters to portfolio (can wait)
