@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import HyperModal from "react-hyper-modal"
 
 const PortfolioItem = ({ data }) => {
   const [modalVisible, setModalVisible] = useState(false)
@@ -11,19 +12,7 @@ const PortfolioItem = ({ data }) => {
     setModalVisible(false)
   }
 
-  return (
-    <>
-      Hi I should be a modal!
-      {/* <CardModal
-        show={modalVisible}
-        onClose={onModalClose}
-        onFlipFinish={onFlipFinish}
-        cardFront={CardFrontComponent}
-        cardBack={CardBackComponent}
-        style={initialModalStyle}
-      /> */}
-    </>
-  )
+  return <HyperModal isOpen={modalVisible}>Hello!</HyperModal>
 }
 
 // Page Query removed from simplicity

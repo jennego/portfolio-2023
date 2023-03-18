@@ -57,8 +57,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-static-page-modal",
       options: {
-        pageRendererPath: `${__dirname}/src/components/PageRenderer.js`,
-        routes: ["/projects/:slug/"],
+        pageRendererPath: `${__dirname}/src/components/PageRenderer.tsx`,
+        routes: ["/"],
+        // routes: ["/projects/:slug/"],
       },
     },
   ],

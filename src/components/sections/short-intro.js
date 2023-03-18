@@ -1,4 +1,7 @@
 import React from "react"
+import { navigate } from "gatsby"
+
+const navigateToRoute = () => navigate("/portfolio/modal", { state: {} })
 
 const ShortIntro = () => {
   return (
@@ -10,6 +13,8 @@ const ShortIntro = () => {
           humour and much purples. I make virtual things that you can look but
           probably not poke. This is primarily my web development portfolio.
         </p>
+
+        <button onClick={navigateToRoute}> Clicky </button>
       </div>
     </div>
   )
