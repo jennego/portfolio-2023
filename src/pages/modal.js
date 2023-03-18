@@ -1,5 +1,4 @@
-// Imports removed for simplicity
-import { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 const PortfolioItem = ({ data }) => {
   const [modalVisible, setModalVisible] = useState(false)
