@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import ContactForm from "../contact-form"
 
 const Contact = () => {
   return (
@@ -11,6 +12,7 @@ const Contact = () => {
       <p>Social media</p>
       <p>Web sites</p>
       <p>Web form</p>
+      <ContactForm />
     </div>
   )
 }

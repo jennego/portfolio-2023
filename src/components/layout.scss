@@ -319,3 +319,26 @@ footer {
   background: rgba(40, 23, 66, 0.7);
   border-radius: 25px;
 }
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: rgba(40, 23, 66, 0.7);
+}
+
+input[type="submit"] {
+  background-color: #281742;
+  border: #f5f2f7 2px solid;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}

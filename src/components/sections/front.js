@@ -8,7 +8,7 @@ const FrontPage = () => {
     <div id="home">
       <div className="image-container">
         <StaticImage
-          src="../../images/ray-grey.jpg"
+          src="../../images/ray.jpg"
           objectFit="cover"
           layout="fullWidth"
           className="gatsby-ray"
