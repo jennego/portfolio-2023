@@ -91,16 +91,6 @@ const About = () => {
       >
         {renderRichText(text, options)}
       </motion.div>
-
-      <motion.div
-        className="box"
-        ref={ref}
-        variants={fadeVariant}
-        initial="hidden"
-        animate={control}
-      >
-        <h1>Box </h1>
-      </motion.div>
     </div>
   )
 }
