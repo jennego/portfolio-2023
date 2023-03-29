@@ -14,5 +14,4 @@ To do
 - style bullet and main nav - switch to framer and intersection observer
 - add contact + social media
 - style footer
-- figure out what to do with the front page and make fixes
 - deploy
