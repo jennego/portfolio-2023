@@ -16,6 +16,9 @@ const Nav = () => {
           <a href="#about" ref={React.createRef()}>
             About
           </a>
+         <a href="#contact" ref={React.createRef()}>
+           Contact
+          </a>
         </ScrollSpy>
       </div>
     </div>

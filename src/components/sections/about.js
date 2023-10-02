@@ -35,7 +35,7 @@ const childParagraphVariant = {
     opacity: 0,
   },
   visible: {
-    x: 0, // bring it back to nrmal
+    x: 0, // bring it back to normal
     opacity: 1,
   },
 }
@@ -77,11 +77,10 @@ const About = () => {
   const text = data.allContentfulSiteInfo.edges[0].node.aboutRt
 
   return (
-    <div id="about section">
+    <div id="about" className="section section-padding">
       <motion.div variants={fadeVariant} initial="hidden" animate={control}>
         <h2 className="heading">About</h2>
       </motion.div>
-      <p> Front-end Dev. Horse lover.Equestrian. Weirdo.</p>
 
       <motion.div
         variants={containerVariant}

@@ -31,6 +31,13 @@ const SideNav = () => {
             </div>
           </div>
         </a>
+      <a href="#contact" ref={React.createRef()}>
+          <div className="bullet-item">
+            <div className="bullet-reg">
+              <FontAwesomeIcon icon={faCircleOutline} />
+            </div>
+          </div>
+        </a>
       </ScrollSpy>
     </div>
   )

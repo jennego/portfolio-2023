@@ -5,6 +5,8 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 
 const FrontPage = () => {
   return (
+    <div className="section">
+
     <div id="home">
       <div className="image-container">
         <StaticImage
@@ -13,7 +15,7 @@ const FrontPage = () => {
           layout="fullWidth"
           className="gatsby-ray"
           alt="Horse"
-        />
+          />
       </div>
       <div className="title-screen">
         <div className="title-text-group">
@@ -27,6 +29,7 @@ const FrontPage = () => {
         </div>
       </div>
     </div>
+          </div>
   )
 }
 
