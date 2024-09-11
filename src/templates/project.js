@@ -14,10 +14,10 @@ import {
   faLaptop,
   faTag,
   faWandMagicSparkles,
-  faGlobe
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons"
 
-import {faGithub} from "@fortawesome/free-brands-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import { tagsWithIcons, tagMapToIcons } from "../components/tech-skills-tags"
 import { motion, useAnimation } from "framer-motion"
@@ -102,7 +102,6 @@ const skillItem = (title, icon, content) => (
   </li>
 )
 
-
 const Project = ({ location, data, pageContext }) => {
   const project = data.contentfulPortfolio
 
@@ -126,10 +125,9 @@ const Project = ({ location, data, pageContext }) => {
       animate="visible"
       exit={{ opacity: 0 }}
     >
-
       <div className="top-row">
         <h1>{project.name}</h1>
-  
+
         <Link to="/#portfolio">
           <div className="exit">
             <FontAwesomeIcon icon={faXmark} size="3x" className="exit-icon" />
@@ -159,12 +157,28 @@ const Project = ({ location, data, pageContext }) => {
               ? skillItem(
                   "Other Skills",
                   faWandMagicSparkles,
-                  project.otherSkills
+                  project.otherSkills,
                 )
               : ""}
-            {project.githubUrl ? <li> <FontAwesomeIcon icon={faGithub} /> Github: <a href="project.githubUrl"> {project.githubUrl} </a> </li>   : ""}
+            {project.githubUrl ? (
+              <li>
+                {" "}
+                <FontAwesomeIcon icon={faGithub} /> Github:{" "}
+                <a href={project.githubUrl}> {project.githubUrl} </a>{" "}
+              </li>
+            ) : (
+              ""
+            )}
 
-            {project.projectUrl ? <li> <FontAwesomeIcon icon={faGlobe} /> Project: <a href="project.projectUrl"> {project.projectUrl} </a> </li>   : ""}
+            {project.projectUrl ? (
+              <li>
+                {" "}
+                <FontAwesomeIcon icon={faGlobe} /> Project:{" "}
+                <a href={project.projectUrl}> {project.projectUrl} </a>{" "}
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
       </div>
@@ -172,19 +186,16 @@ const Project = ({ location, data, pageContext }) => {
         <div className="col-xs-12 col-md-10 col-lg-8">
           <div className="project-long-text section-padding">
             {renderRichText(project.longDescriptionRt)}
-    
-          {project.gallery
-            ? project.gallery.map(image => (
-              <GatsbyImage image={image.gatsbyImageData} />
-              ))
-            : ""}
-          {/* </motion.div> */}
-              </div>
+
+            {project.gallery
+              ? project.gallery.map(image => (
+                  <GatsbyImage image={image.gatsbyImageData} />
+                ))
+              : ""}
+            {/* </motion.div> */}
+          </div>
         </div>
       </div>
-
-   
-     
 
       <div className="project-nav-container">
         <div className="row project-nav">
@@ -204,9 +215,8 @@ const Project = ({ location, data, pageContext }) => {
           </div>
           <div className="nav-title">
             {pageContext.next ? (
-               
               <Link to={`/projects/${pageContext.next.slug}`}>
-              <FontAwesomeIcon icon={faArrowRight} size="2x" />
+                <FontAwesomeIcon icon={faArrowRight} size="2x" />
               </Link>
             ) : (
               ""
